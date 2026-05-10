@@ -14,23 +14,17 @@
 
   <style>
 
-    /* RESET */
-
     *{
       margin:0;
       padding:0;
       box-sizing:border-box;
     }
 
-    html{
-      scroll-behavior:smooth;
-    }
-
     body{
       font-family:'Poppins', sans-serif;
-      background:linear-gradient(180deg,#fff0f5 0%,#ffe4ee 100%);
-      overflow-x:hidden;
+      background:#fff4f8;
       color:#6d4b57;
+      overflow-x:hidden;
     }
 
     img{
@@ -51,15 +45,23 @@
     /* HERO */
 
     .hero{
-      min-height:100vh;
+
       position:relative;
-      display:flex;
-      align-items:center;
-      justify-content:center;
+
+      min-height:100vh;
+
       overflow:hidden;
+
+      display:flex;
+
+      align-items:center;
+
+      justify-content:center;
+
+      padding:20px;
     }
 
-    /* BANNER DESKTOP */
+    /* BANNER */
 
     .hero::before{
 
@@ -71,15 +73,15 @@
 
       background:
       linear-gradient(
-        rgba(255,240,245,.45),
-        rgba(255,228,238,.7)
+        rgba(255,240,245,.25),
+        rgba(255,228,238,.55)
       ),
       url('banner.png') center center/cover no-repeat;
 
-      transform:scale(1.05);
+      z-index:0;
     }
 
-    /* EFEITO ROSA */
+    /* DEGRADE */
 
     .hero::after{
 
@@ -87,24 +89,24 @@
 
       position:absolute;
 
-      width:100%;
-
-      height:180px;
-
-      bottom:-1px;
-
       left:0;
+      bottom:0;
+
+      width:100%;
+      height:180px;
 
       background:linear-gradient(
         to top,
-        #fff0f5,
+        #fff4f8,
         transparent
       );
+
+      z-index:1;
     }
 
-    /* ÍCONES REPETITIVOS */
+    /* ICONES */
 
-    .icons{
+    .floating-icons{
 
       position:absolute;
 
@@ -117,63 +119,51 @@
       pointer-events:none;
     }
 
-    .icons span{
+    .floating-icons span{
 
       position:absolute;
 
       color:rgba(255,255,255,.55);
 
-      font-size:26px;
+      font-size:24px;
 
       animation:float 10s linear infinite;
     }
 
-    .icons span:nth-child(1){
+    .floating-icons span:nth-child(1){
       left:5%;
-      top:90%;
+      top:100%;
       animation-delay:0s;
     }
 
-    .icons span:nth-child(2){
-      left:18%;
-      top:95%;
+    .floating-icons span:nth-child(2){
+      left:20%;
+      top:100%;
       animation-delay:2s;
     }
 
-    .icons span:nth-child(3){
-      left:30%;
-      top:92%;
+    .floating-icons span:nth-child(3){
+      left:35%;
+      top:100%;
       animation-delay:4s;
     }
 
-    .icons span:nth-child(4){
-      left:45%;
-      top:94%;
+    .floating-icons span:nth-child(4){
+      left:50%;
+      top:100%;
       animation-delay:1s;
     }
 
-    .icons span:nth-child(5){
-      left:58%;
-      top:96%;
-      animation-delay:3s;
-    }
-
-    .icons span:nth-child(6){
-      left:70%;
-      top:91%;
+    .floating-icons span:nth-child(5){
+      left:65%;
+      top:100%;
       animation-delay:5s;
     }
 
-    .icons span:nth-child(7){
-      left:82%;
-      top:93%;
-      animation-delay:2s;
-    }
-
-    .icons span:nth-child(8){
-      left:92%;
-      top:95%;
-      animation-delay:6s;
+    .floating-icons span:nth-child(6){
+      left:80%;
+      top:100%;
+      animation-delay:3s;
     }
 
     @keyframes float{
@@ -194,7 +184,7 @@
 
     }
 
-    /* HERO CONTENT */
+    /* CARD HERO */
 
     .hero-content{
 
@@ -202,23 +192,23 @@
 
       z-index:2;
 
+      width:100%;
+      max-width:680px;
+
+      padding:40px 30px;
+
       text-align:center;
-
-      width:95%;
-      max-width:700px;
-
-      padding:35px 30px;
 
       border-radius:35px;
 
-      background:rgba(255,255,255,.16);
+      background:rgba(255,255,255,.28);
 
-      backdrop-filter:blur(15px);
+      backdrop-filter:blur(14px);
 
-      border:2px solid rgba(255,255,255,.25);
+      border:1px solid rgba(255,255,255,.4);
 
       box-shadow:
-      0 10px 50px rgba(255,105,180,.25);
+      0 10px 40px rgba(255,105,180,.18);
 
       animation:fadeUp 1s ease;
     }
@@ -237,49 +227,27 @@
 
     }
 
-    .top-badge{
-
-      display:inline-block;
-
-      background:#ff5fa2;
-
-      color:white;
-
-      padding:10px 22px;
-
-      border-radius:999px;
-
-      font-size:14px;
-
-      font-weight:600;
-
-      margin-bottom:22px;
-
-      box-shadow:
-      0 5px 20px rgba(255,105,180,.4);
-    }
-
     .hero h1{
 
       font-size:4rem;
-
-      color:#ff4f97;
 
       line-height:1;
 
       margin-bottom:20px;
 
+      color:#ff4f97;
+
       font-weight:800;
 
       text-shadow:
-      2px 2px 12px rgba(255,255,255,.7);
+      2px 2px 12px rgba(255,255,255,.8);
     }
 
     .hero p{
 
-      font-size:1.15rem;
+      font-size:1.1rem;
 
-      line-height:1.7;
+      line-height:1.8;
 
       margin-bottom:25px;
 
@@ -299,16 +267,16 @@
 
     .hero-card{
 
-      background:rgba(255,255,255,.7);
+      background:rgba(255,255,255,.8);
 
-      padding:14px 20px;
+      padding:15px 22px;
 
-      border-radius:20px;
+      border-radius:22px;
 
       min-width:130px;
 
       box-shadow:
-      0 5px 20px rgba(255,105,180,.15);
+      0 5px 20px rgba(255,105,180,.12);
     }
 
     .hero-card strong{
@@ -320,15 +288,15 @@
       font-size:18px;
     }
 
-    /* SECTION TITLE */
+    /* TITULO */
 
     .section-title{
 
-      font-size:2.4rem;
+      text-align:center;
+
+      font-size:2.5rem;
 
       color:#ff4f97;
-
-      text-align:center;
 
       margin-bottom:20px;
 
@@ -343,13 +311,13 @@
 
     .about p{
 
-      max-width:750px;
+      max-width:760px;
 
       margin:auto;
 
       line-height:1.9;
 
-      font-size:1.08rem;
+      font-size:1.05rem;
     }
 
     /* PRESENTES */
@@ -360,23 +328,23 @@
 
       background:white;
 
-      border-radius:30px;
+      border-radius:35px;
 
-      padding:40px 30px;
+      padding:40px 25px;
 
       box-shadow:
-      0 10px 40px rgba(255,105,180,.12);
+      0 10px 35px rgba(255,105,180,.1);
     }
 
     .gift-box h3{
+
+      text-align:center;
 
       color:#ff4f97;
 
       font-size:2rem;
 
-      margin-bottom:20px;
-
-      text-align:center;
+      margin-bottom:25px;
     }
 
     .gift-items{
@@ -392,24 +360,24 @@
 
     .gift-item{
 
-      background:#fff0f6;
+      background:#fff3f8;
 
       padding:22px;
 
-      border-radius:20px;
+      border-radius:25px;
 
       min-width:220px;
 
-      transition:.3s;
-
       border:2px solid transparent;
+
+      transition:.3s;
     }
 
     .gift-item:hover{
 
       transform:translateY(-8px);
 
-      border-color:#ff9bc3;
+      border-color:#ffc1d8;
     }
 
     .gift-item span{
@@ -418,7 +386,7 @@
 
       font-size:3rem;
 
-      margin-bottom:10px;
+      margin-bottom:12px;
     }
 
     .gift-item h4{
@@ -443,16 +411,20 @@
       border-radius:35px;
 
       box-shadow:
-      0 15px 50px rgba(255,105,180,.2);
+      0 15px 45px rgba(255,105,180,.15);
     }
 
     .slides{
+
       display:flex;
+
       transition:transform .5s ease;
     }
 
     .slide{
+
       min-width:100%;
+
       position:relative;
     }
 
@@ -475,7 +447,7 @@
 
       background:linear-gradient(
         to top,
-        rgba(0,0,0,.45),
+        rgba(0,0,0,.35),
         transparent
       );
     }
@@ -484,9 +456,9 @@
 
       position:absolute;
 
-      bottom:35px;
+      left:25px;
 
-      left:30px;
+      bottom:25px;
 
       color:white;
 
@@ -497,8 +469,11 @@
 
       font-size:2rem;
 
-      margin-bottom:10px;
+      text-shadow:
+      2px 2px 10px rgba(0,0,0,.35);
     }
+
+    /* BOTÕES */
 
     .controls{
 
@@ -521,49 +496,51 @@
 
     .controls button{
 
-      width:50px;
-      height:50px;
+      width:48px;
+      height:48px;
 
       border:none;
 
       border-radius:50%;
 
-      background:rgba(255,255,255,.8);
+      background:rgba(255,255,255,.75);
 
       color:#ff4f97;
 
-      font-size:1.4rem;
+      font-size:1.3rem;
 
       cursor:pointer;
 
       transition:.3s;
+
+      backdrop-filter:blur(4px);
     }
 
     .controls button:hover{
 
       background:white;
 
-      transform:scale(1.1);
+      transform:scale(1.08);
     }
 
     /* FOOTER */
 
     footer{
 
-      padding:40px 20px;
+      background:#ffc7da;
+
+      color:#8a5c6d;
 
       text-align:center;
 
-      background:#ff5fa2;
+      padding:35px 20px;
 
-      color:white;
-
-      margin-top:70px;
+      margin-top:60px;
     }
 
     footer h3{
 
-      font-size:1.8rem;
+      font-size:1.6rem;
 
       margin-bottom:10px;
     }
@@ -576,32 +553,54 @@
         padding:50px 0;
       }
 
-      /* BANNER CELULAR */
-
-      .hero::before{
-
-        background:
-        linear-gradient(
-          rgba(255,240,245,.58),
-          rgba(255,228,238,.78)
-        ),
-        url('banner.png') center top/cover no-repeat;
-
-        transform:scale(1);
-      }
+      /* BANNER MOBILE */
 
       .hero{
 
-        min-height:95vh;
+        min-height:auto;
 
-        padding:20px;
+        display:block;
+
+        padding:0 18px 40px;
       }
+
+      .hero::before{
+
+        top:0;
+
+        height:56vh;
+
+        inset:auto 0 auto 0;
+
+        background:
+        linear-gradient(
+          rgba(255,240,245,.15),
+          rgba(255,228,238,.35)
+        ),
+        url('banner.png') center top/contain no-repeat;
+
+        background-color:#ffe3ed;
+
+        border-bottom-left-radius:35px;
+        border-bottom-right-radius:35px;
+      }
+
+      /* CARD DESCENDO */
 
       .hero-content{
 
-        padding:28px 22px;
+        margin-top:42vh;
+
+        background:rgba(255,255,255,.92);
+
+        backdrop-filter:none;
 
         border-radius:30px;
+
+        padding:30px 22px;
+
+        box-shadow:
+        0 10px 35px rgba(255,105,180,.12);
       }
 
       .hero h1{
@@ -636,22 +635,9 @@
         min-width:100%;
       }
 
-      /* FOTO MOBILE */
-
       .slide img{
 
         aspect-ratio:4/5;
-
-        object-fit:cover;
-
-        object-position:center top;
-      }
-
-      .caption{
-
-        left:20px;
-
-        bottom:25px;
       }
 
       .caption h2{
@@ -667,36 +653,34 @@
         font-size:1.1rem;
       }
 
-      /* ÍCONES MOBILE */
+      .floating-icons span{
 
-      .icons span{
-
-        font-size:20px;
+        font-size:18px;
       }
 
     }
 
     @media(max-width:480px){
 
+      .hero-content{
+
+        margin-top:38vh;
+      }
+
       .hero h1{
+
         font-size:2rem;
       }
 
-      .hero p{
-        font-size:.95rem;
-      }
-
-      .top-badge{
-        font-size:12px;
-      }
-
       .caption h2{
+
         font-size:1.2rem;
       }
 
     }
 
   </style>
+
 </head>
 
 <body>
@@ -705,30 +689,30 @@
 
   <section class="hero">
 
-    <!-- ÍCONES -->
+    <!-- ICONES -->
 
-    <div class="icons">
+    <div class="floating-icons">
+
       <span>💖</span>
       <span>🎀</span>
       <span>🧸</span>
       <span>💕</span>
-      <span>👶</span>
       <span>🌸</span>
-      <span>💞</span>
-      <span>🍼</span>
+      <span>✨</span>
+
     </div>
+
+    <!-- CARD -->
 
     <div class="hero-content">
 
-      <div class="top-badge">
-        👶 Mamãe com 16 semanas
-      </div>
-
-      <h1>Chá de Bebê 🎀</h1>
+      <h1>
+        Chá de Bebê 🎀
+      </h1>
 
       <p>
-        Estamos esperando nossa princesinha com muito amor,
-        carinho e felicidade 💖
+        Estamos esperando nossa princesinha
+        com muito amor, carinho e felicidade 💖
       </p>
 
       <div class="hero-info">
@@ -770,26 +754,40 @@
 
       <div class="gift-box">
 
-        <h3>🎁 Sugestão de Presente</h3>
+        <h3>
+          🎁 Sugestão de Presente
+        </h3>
 
         <div class="gift-items">
 
           <div class="gift-item">
+
             <span>🍼</span>
+
             <h4>Fralda M</h4>
+
             <p>Qualquer marca 💖</p>
+
           </div>
 
           <div class="gift-item">
-            <span>👶</span>
+
+            <span>🎀</span>
+
             <h4>Fralda G</h4>
+
             <p>Vai ajudar muito 🥰</p>
+
           </div>
 
           <div class="gift-item">
+
             <span>🧷</span>
+
             <h4>Lenço Umedecido</h4>
-            <p>Com muito carinho 🎀</p>
+
+            <p>Com muito carinho 💕</p>
+
           </div>
 
         </div>
@@ -807,7 +805,7 @@
     <div class="container">
 
       <h2 class="section-title">
-        Nossa Espera 💕
+        Nossa Espera 💖
       </h2>
 
       <div class="carousel">
@@ -816,19 +814,19 @@
 
           <div class="slide">
 
-            <img src="foto.jpeg" alt="">
+            <img src="foto.jpeg">
 
             <div class="overlay"></div>
 
             <div class="caption">
-              <h2>Nosso amor está crescendo 👶</h2>
+              <h2>Nosso amor está crescendo ✨</h2>
             </div>
 
           </div>
 
           <div class="slide">
 
-            <img src="foto1.jpeg" alt="">
+            <img src="foto1.jpeg">
 
             <div class="overlay"></div>
 
@@ -840,19 +838,19 @@
 
           <div class="slide">
 
-            <img src="foto2.jpeg" alt="">
+            <img src="foto2.jpeg">
 
             <div class="overlay"></div>
 
             <div class="caption">
-              <h2>Momentos inesquecíveis 💖</h2>
+              <h2>Momentos inesquecíveis 💕</h2>
             </div>
 
           </div>
 
         </div>
 
-        <!-- BOTÕES -->
+        <!-- CONTROLES -->
 
         <div class="controls">
 
@@ -876,10 +874,12 @@
 
   <footer>
 
-    <h3>💖 Chá de Bebê 💖</h3>
+    <h3>
+      Chá de Bebê 🎀
+    </h3>
 
     <p>
-      Feito com muito amor para nossa princesinha 👶🎀
+      Feito com muito amor para nossa princesinha 💖
     </p>
 
   </footer>
@@ -899,7 +899,7 @@
     function updateSlide(){
 
       slides.style.transform =
-        `translateX(-${currentSlide * 100}%)`;
+      `translateX(-${currentSlide * 100}%)`;
 
     }
 
@@ -912,6 +912,7 @@
       }
 
       updateSlide();
+
     }
 
     function prevSlide(){
@@ -923,6 +924,7 @@
       }
 
       updateSlide();
+
     }
 
     setInterval(() => {
