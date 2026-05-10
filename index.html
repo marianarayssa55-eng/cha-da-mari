@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chá de Bebê 🎀</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* RESET */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Poppins', sans-serif;
+  background:linear-gradient(180deg,#fff0f5 0%,#ffe4ee 100%);
+  overflow-x:hidden;
+  color:#6d4b57;
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+.container{
+  width:92%;
+  max-width:1200px;
+  margin:auto;
+}
+
+section{
+  padding:70px 0;
+}
+
+/* HERO */
+
+.hero{
+  min-height:100vh;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background:
+  linear-gradient(
+    rgba(255,240,245,.45),
+    rgba(255,228,238,.7)
+  ),
+  url('banner.png') center center/cover no-repeat;
+
+  transform:scale(1.05);
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  width:100%;
+  height:150px;
+  bottom:-1px;
+  left:0;
+
+  background:linear-gradient(
+    to top,
+    #fff0f5,
+    transparent
+  );
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  text-align:center;
+
+  padding:30px;
+  width:95%;
+  max-width:700px;
+
+  background:rgba(255,255,255,.18);
+  backdrop-filter:blur(14px);
+
+  border:2px solid rgba(255,255,255,.35);
+
+  border-radius:35px;
+
+  box-shadow:
+  0 10px 50px rgba(255,105,180,.25);
+
+  animation:subir 1s ease;
+}
+
+@keyframes subir{
+
+  from{
+    opacity:0;
+    transform:translateY(40px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}
+
+.top-badge{
+  background:#ff5fa2;
+
+  display:inline-block;
+
+  padding:10px 20px;
+
+  border-radius:999px;
+
+  color:white;
+
+  font-size:14px;
+  font-weight:600;
+
+  margin-bottom:20px;
+
+  box-shadow:
+  0 5px 20px rgba(255,105,180,.4);
+}
+
+.hero h1{
+  font-size:4rem;
+  line-height:1;
+
+  color:#ff4f97;
+
+  margin-bottom:20px;
+
+  font-weight:800;
+
+  text-shadow:
+  2px 2px 12px rgba(255,255,255,.6);
+}
+
+.hero p{
+  font-size:1.15rem;
+  line-height:1.7;
+
+  color:#744f5c;
+
+  margin-bottom:25px;
+}
+
+.hero-info{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.hero-card{
+
+  background:rgba(255,255,255,.7);
+
+  padding:14px 20px;
+
+  border-radius:20px;
+
+  min-width:130px;
+
+  box-shadow:
+  0 5px 20px rgba(255,105,180,.15);
+}
+
+.hero-card strong{
+  display:block;
+
+  color:#ff4f97;
+
+  font-size:18px;
+}
+
+/* SOBRE */
+
+.about{
+  text-align:center;
+}
+
+.section-title{
+  font-size:2.4rem;
+
+  color:#ff4f97;
+
+  margin-bottom:20px;
+
+  font-weight:800;
+}
+
+.about p{
+  max-width:750px;
+
+  margin:auto;
+
+  line-height:1.9;
+
+  font-size:1.08rem;
+}
+
+/* PRESENTES */
+
+.gift-box{
+
+  margin-top:40px;
+
+  background:white;
+
+  border-radius:30px;
+
+  padding:40px 30px;
+
+  box-shadow:
+  0 10px 40px rgba(255,105,180,.12);
+}
+
+.gift-box h3{
+
+  color:#ff4f97;
+
+  font-size:2rem;
+
+  margin-bottom:20px;
+}
+
+.gift-items{
+
+  display:flex;
+
+  justify-content:center;
+
+  gap:20px;
+
+  flex-wrap:wrap;
+}
+
+.gift-item{
+
+  background:#fff0f6;
+
+  padding:20px;
+
+  border-radius:20px;
+
+  min-width:200px;
+
+  transition:.3s;
+
+  border:2px solid transparent;
+}
+
+.gift-item:hover{
+
+  transform:translateY(-8px);
+
+  border-color:#ff9bc3;
+}
+
+.gift-item span{
+
+  font-size:3rem;
+
+  display:block;
+
+  margin-bottom:10px;
+}
+
+.gift-item h4{
+
+  color:#ff4f97;
+
+  margin-bottom:10px;
+}
+
+/* CARROSSEL */
+
+.carousel-section{
+  overflow:hidden;
+}
+
+.carousel{
+
+  position:relative;
+
+  max-width:1000px;
+
+  margin:40px auto 0;
+
+  border-radius:35px;
+
+  overflow:hidden;
+
+  box-shadow:
+  0 15px 50px rgba(255,105,180,.2);
+}
+
+.slides{
+  display:flex;
+  transition:transform .5s ease;
+}
+
+.slide{
+  min-width:100%;
+  position:relative;
+}
+
+/* FOTO CARROSSEL */
+
+.slide img{
+
+  width:100%;
+
+  aspect-ratio:4/5;
+
+  object-fit:cover;
+
+  object-position:center top;
+
+  border-radius:0;
+}
+
+/* OVERLAY */
+
+.overlay{
+
+  position:absolute;
+
+  inset:0;
+
+  background:linear-gradient(
+    to top,
+    rgba(0,0,0,.45),
+    transparent
+  );
+}
+
+/* TEXTO FOTO */
+
+.caption{
+
+  position:absolute;
+
+  bottom:40px;
+
+  left:30px;
+
+  color:white;
+
+  z-index:2;
+}
+
+.caption h2{
+
+  font-size:2rem;
+
+  margin-bottom:10px;
+}
+
+.caption p{
+
+  font-size:1rem;
+
+  opacity:.95;
+}
+
+/* BOTÕES */
+
+.controls{
+
+  position:absolute;
+
+  top:50%;
+
+  width:100%;
+
+  display:flex;
+
+  justify-content:space-between;
+
+  transform:translateY(-50%);
+
+  padding:0 15px;
+
+  z-index:5;
+}
+
+.controls button{
+
+  width:50px;
+  height:50px;
+
+  border-radius:50%;
+
+  border:none;
+
+  background:rgba(255,255,255,.8);
+
+  color:#ff4f97;
+
+  font-size:1.5rem;
+
+  cursor:pointer;
+
+  transition:.3s;
+
+  backdrop-filter:blur(5px);
+}
+
+.controls button:hover{
+
+  transform:scale(1.1);
+
+  background:white;
+}
+
+/* FOOTER */
+
+footer{
+
+  padding:40px 20px;
+
+  text-align:center;
+
+  background:#ff5fa2;
+
+  color:white;
+
+  margin-top:60px;
+}
+
+footer h3{
+
+  font-size:1.8rem;
+
+  margin-bottom:10px;
+}
+
+footer p{
+  opacity:.95;
+}
+
+/* FLOAT ICONS */
+
+.heart{
+
+  position:absolute;
+
+  color:rgba(255,255,255,.5);
+
+  animation:flutuar 8s linear infinite;
+
+  font-size:20px;
+}
+
+@keyframes flutuar{
+
+  0%{
+    transform:translateY(0) rotate(0deg);
+    opacity:0;
+  }
+
+  30%{
+    opacity:1;
+  }
+
+  100%{
+    transform:translateY(-100vh) rotate(360deg);
+    opacity:0;
+  }
+
+}
+
+/* RESPONSIVO */
+
+@media(max-width:768px){
+
+  section{
+    padding:50px 0;
+  }
+
+  .hero{
+    min-height:92vh;
+  }
+
+  .hero-content{
+    padding:25px 20px;
+  }
+
+  .hero h1{
+    font-size:2.5rem;
+  }
+
+  .hero p{
+    font-size:1rem;
+  }
+
+  .hero-card{
+
+    min-width:110px;
+
+    padding:12px;
+  }
+
+  .section-title{
+    font-size:2rem;
+  }
+
+  .gift-box{
+    padding:30px 20px;
+  }
+
+  /* FOTO MOBILE */
+
+  .slide img{
+
+    aspect-ratio:4/5;
+
+    object-fit:cover;
+
+    object-position:center top;
+  }
+
+  .caption{
+
+    bottom:25px;
+
+    left:20px;
+  }
+
+  .caption h2{
+    font-size:1.4rem;
+  }
+
+  .caption p{
+    font-size:.95rem;
+  }
+
+  .controls button{
+
+    width:42px;
+    height:42px;
+
+    font-size:1.2rem;
+  }
+
+}
+
+@media(max-width:480px){
+
+  .hero h1{
+    font-size:2rem;
+  }
+
+  .hero p{
+    font-size:.95rem;
+  }
+
+  .top-badge{
+    font-size:12px;
+  }
+
+  .gift-item{
+    min-width:100%;
+  }
+
+  .caption h2{
+    font-size:1.2rem;
+  }
+
+  .caption p{
+    font-size:.9rem;
+  }
+
+}
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <span class="heart" style="left:10%; animation-delay:0s;">💖</span>
+    <span class="heart" style="left:30%; animation-delay:2s;">🎀</span>
+    <span class="heart" style="left:50%; animation-delay:4s;">💕</span>
+    <span class="heart" style="left:70%; animation-delay:1s;">🧸</span>
+    <span class="heart" style="left:90%; animation-delay:3s;">👶</span>
+
+    <div class="hero-content">
+
+      <div class="top-badge">
+        👶 Mamãe com 16 semanas
+      </div>
+
+      <h1>
+        Chá de Bebê
+      </h1>
+
+      <p>
+        Estamos esperando nossa princesinha com muito amor,
+        carinho e felicidade 💖
+      </p>
+
+      <div class="hero-info">
+
+        <div class="hero-card">
+          <strong>09/08</strong>
+          Data
+        </div>
+
+        <div class="hero-card">
+          <strong>14:00</strong>
+          Horário
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SOBRE -->
+
+  <section class="about">
+
+    <div class="container">
+
+      <h2 class="section-title">
+        Um momento muito especial ✨
+      </h2>
+
+      <p>
+        Criamos esse cantinho com muito amor para compartilhar
+        com vocês a alegria da chegada da nossa bebê 🎀
+        Estamos vivendo uma fase linda e será maravilhoso
+        celebrar esse momento ao lado das pessoas que amamos 💕
+      </p>
+
+      <!-- PRESENTES -->
+
+      <div class="gift-box">
+
+        <h3>🎁 Sugestão de Presente</h3>
+
+        <div class="gift-items">
+
+          <div class="gift-item">
+            <span>🍼</span>
+            <h4>Fralda M</h4>
+            <p>Pode ser qualquer marca 💖</p>
+          </div>
+
+          <div class="gift-item">
+            <span>👶</span>
+            <h4>Fralda G</h4>
+            <p>Vai ajudar muito 🥰</p>
+          </div>
+
+          <div class="gift-item">
+            <span>🧷</span>
+            <h4>Lenço Umedecido</h4>
+            <p>Com muito carinho 🎀</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CARROSSEL -->
+
+  <section class="carousel-section">
+
+    <div class="container">
+
+      <h2 class="section-title">
+        Nossa Espera 💕
+      </h2>
+
+      <div class="carousel">
+
+        <div class="slides" id="slides">
+
+          <div class="slide">
+            <img src="foto.jpeg" alt="foto">
+            <div class="overlay"></div>
+
+            <div class="caption">
+              <h2>Nosso amor está crescendo 👶</h2>
+              <p>Uma nova fase cheia de carinho e felicidade 💖</p>
+            </div>
+          </div>
+
+          <div class="slide">
+            <img src="foto1.jpeg" alt="foto1">
+            <div class="overlay"></div>
+
+            <div class="caption">
+              <h2>Esperando nossa princesa 🎀</h2>
+              <p>Contando os dias para conhecer nosso bebê 💕</p>
+            </div>
+          </div>
+
+          <div class="slide">
+            <img src="foto2.jpeg" alt="foto2">
+            <div class="overlay"></div>
+
+            <div class="caption">
+              <h2>Momentos inesquecíveis ✨</h2>
+              <p>Cada semana é ainda mais especial 🧸</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="controls">
+          <button onclick="prevSlide()">❮</button>
+          <button onclick="nextSlide()">❯</button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <h3>💖 Chá de Bebê 💖</h3>
+
+    <p>
+      Feito com muito amor para nossa princesinha 👶🎀
+    </p>
+
+  </footer>
+
+  <!-- JS -->
+
+  <script>
+
+    let currentSlide = 0;
+
+    const slides = document.getElementById('slides');
+
+    const totalSlides = document.querySelectorAll('.slide').length;
+
+    function updateSlide() {
+      slides.style.transform =
+        `translateX(-${currentSlide * 100}%)`;
+    }
+
+    function nextSlide() {
+      currentSlide++;
+
+      if (currentSlide >= totalSlides) {
+        currentSlide = 0;
+      }
+
+      updateSlide();
+    }
+
+    function prevSlide() {
+      currentSlide--;
+
+      if (currentSlide < 0) {
+        currentSlide = totalSlides - 1;
+      }
+
+      updateSlide();
+    }
+
+    setInterval(() => {
+      nextSlide();
+    }, 5000);
+
+  </script>
+
+</body>
+
+</html>
