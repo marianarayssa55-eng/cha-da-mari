@@ -2,17 +2,80 @@
 <html lang="pt-BR">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>Chá de Bebê 🎀</title>
 
+  <!-- FONTES -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- PRELOAD -->
+
+  <link rel="preload" as="image" href="banner.png">
 
   <style>
+
+    /* ======================================
+       ROOT
+    ====================================== */
+
+    :root{
+
+      --primary:#ff4f97;
+
+      --primary-soft:#ffc9dd;
+
+      --background:#fff7fa;
+
+      --white:#ffffff;
+
+      --text:#6b4c57;
+
+      --text-light:#8d6b77;
+
+      --shadow:
+      0 10px 35px rgba(255,105,180,.12);
+
+      --shadow-hover:
+      0 18px 45px rgba(255,105,180,.18);
+
+      --glass:
+      rgba(255,255,255,.28);
+
+      --border:
+      rgba(255,255,255,.4);
+
+      --radius-xl:36px;
+      --radius-lg:28px;
+      --radius-md:22px;
+
+      --title-font:'Fredoka', sans-serif;
+
+      --text-font:'Poppins', sans-serif;
+
+      --transition:.35s ease;
+
+      --container:1200px;
+
+    }
+
+    /* ======================================
+       RESET
+    ====================================== */
 
     *{
       margin:0;
@@ -20,29 +83,72 @@
       box-sizing:border-box;
     }
 
+    html{
+      scroll-behavior:smooth;
+    }
+
     body{
-      font-family:'Poppins', sans-serif;
-      background:#fff4f8;
-      color:#6d4b57;
+
+      background:var(--background);
+
+      color:var(--text);
+
+      font-family:var(--text-font);
+
       overflow-x:hidden;
+
     }
 
     img{
-      max-width:100%;
+      width:100%;
       display:block;
     }
 
-    .container{
-      width:92%;
-      max-width:1200px;
-      margin:auto;
+    a{
+      text-decoration:none;
     }
 
     section{
-      padding:70px 0;
+      padding:80px 20px;
     }
 
-    /* HERO */
+    .container{
+      width:100%;
+      max-width:var(--container);
+      margin:auto;
+    }
+
+    .section-title{
+
+      text-align:center;
+
+      font-family:var(--title-font);
+
+      font-size:clamp(2rem,5vw,3rem);
+
+      color:var(--primary);
+
+      margin-bottom:15px;
+
+    }
+
+    .section-subtitle{
+
+      text-align:center;
+
+      max-width:760px;
+
+      margin:auto auto 40px;
+
+      line-height:1.9;
+
+      color:var(--text-light);
+
+    }
+
+    /* ======================================
+       HERO
+    ====================================== */
 
     .hero{
 
@@ -50,18 +156,17 @@
 
       min-height:100vh;
 
-      overflow:hidden;
-
       display:flex;
 
       align-items:center;
 
       justify-content:center;
 
-      padding:20px;
-    }
+      overflow:hidden;
 
-    /* BANNER */
+      padding:20px;
+
+    }
 
     .hero::before{
 
@@ -79,9 +184,8 @@
       url('banner.png') center center/cover no-repeat;
 
       z-index:0;
-    }
 
-    /* DEGRADE */
+    }
 
     .hero::after{
 
@@ -93,18 +197,22 @@
       bottom:0;
 
       width:100%;
-      height:180px;
+      height:220px;
 
-      background:linear-gradient(
+      background:
+      linear-gradient(
         to top,
-        #fff4f8,
+        var(--background),
         transparent
       );
 
       z-index:1;
+
     }
 
-    /* ICONES */
+    /* ======================================
+       FLOATING ICONS
+    ====================================== */
 
     .floating-icons{
 
@@ -117,59 +225,55 @@
       z-index:1;
 
       pointer-events:none;
+
     }
 
     .floating-icons span{
 
       position:absolute;
 
-      color:rgba(255,255,255,.55);
+      color:rgba(255,255,255,.6);
 
       font-size:24px;
 
       animation:float 10s linear infinite;
+
     }
 
     .floating-icons span:nth-child(1){
       left:5%;
-      top:100%;
       animation-delay:0s;
     }
 
     .floating-icons span:nth-child(2){
       left:20%;
-      top:100%;
       animation-delay:2s;
     }
 
     .floating-icons span:nth-child(3){
       left:35%;
-      top:100%;
       animation-delay:4s;
     }
 
     .floating-icons span:nth-child(4){
       left:50%;
-      top:100%;
       animation-delay:1s;
     }
 
     .floating-icons span:nth-child(5){
-      left:65%;
-      top:100%;
+      left:70%;
       animation-delay:5s;
     }
 
     .floating-icons span:nth-child(6){
-      left:80%;
-      top:100%;
+      left:85%;
       animation-delay:3s;
     }
 
     @keyframes float{
 
       0%{
-        transform:translateY(0) rotate(0deg);
+        transform:translateY(110vh) rotate(0);
         opacity:0;
       }
 
@@ -184,7 +288,9 @@
 
     }
 
-    /* CARD HERO */
+    /* ======================================
+       HERO CONTENT
+    ====================================== */
 
     .hero-content{
 
@@ -193,24 +299,24 @@
       z-index:2;
 
       width:100%;
-      max-width:680px;
-
-      padding:40px 30px;
+      max-width:720px;
 
       text-align:center;
 
-      border-radius:35px;
+      padding:45px 35px;
 
-      background:rgba(255,255,255,.28);
+      border-radius:var(--radius-xl);
 
-      backdrop-filter:blur(14px);
+      background:var(--glass);
 
-      border:1px solid rgba(255,255,255,.4);
+      backdrop-filter:blur(16px);
 
-      box-shadow:
-      0 10px 40px rgba(255,105,180,.18);
+      border:1px solid var(--border);
+
+      box-shadow:var(--shadow);
 
       animation:fadeUp 1s ease;
+
     }
 
     @keyframes fadeUp{
@@ -227,31 +333,48 @@
 
     }
 
-    .hero h1{
+    .hero-tag{
 
-      font-size:4rem;
+      display:inline-block;
 
-      line-height:1;
+      padding:10px 18px;
+
+      border-radius:999px;
+
+      background:rgba(255,255,255,.8);
+
+      color:var(--primary);
+
+      font-weight:600;
 
       margin-bottom:20px;
 
-      color:#ff4f97;
+      font-size:.9rem;
 
-      font-weight:800;
+    }
 
-      text-shadow:
-      2px 2px 12px rgba(255,255,255,.8);
+    .hero h1{
+
+      font-family:var(--title-font);
+
+      font-size:clamp(3rem,7vw,5rem);
+
+      line-height:1;
+
+      color:var(--primary);
+
+      margin-bottom:20px;
+
     }
 
     .hero p{
 
-      font-size:1.1rem;
+      line-height:1.9;
 
-      line-height:1.8;
+      font-size:1.05rem;
 
-      margin-bottom:25px;
+      margin-bottom:30px;
 
-      color:#744f5c;
     }
 
     .hero-info{
@@ -260,158 +383,183 @@
 
       justify-content:center;
 
-      gap:15px;
+      gap:18px;
 
       flex-wrap:wrap;
+
+      margin-bottom:30px;
+
     }
 
     .hero-card{
 
-      background:rgba(255,255,255,.8);
+      background:rgba(255,255,255,.85);
 
-      padding:15px 22px;
-
-      border-radius:22px;
+      padding:18px;
 
       min-width:130px;
 
+      border-radius:24px;
+
       box-shadow:
-      0 5px 20px rgba(255,105,180,.12);
+      0 6px 18px rgba(255,105,180,.1);
+
     }
 
     .hero-card strong{
 
       display:block;
 
-      color:#ff4f97;
+      color:var(--primary);
 
-      font-size:18px;
+      font-size:1.2rem;
+
+      margin-bottom:5px;
+
     }
 
-    /* TITULO */
+    .hero-btn{
 
-    .section-title{
+      display:inline-flex;
 
-      text-align:center;
-
-      font-size:2.5rem;
-
-      color:#ff4f97;
-
-      margin-bottom:20px;
-
-      font-weight:800;
-    }
-
-    /* ABOUT */
-
-    .about{
-      text-align:center;
-    }
-
-    .about p{
-
-      max-width:760px;
-
-      margin:auto;
-
-      line-height:1.9;
-
-      font-size:1.05rem;
-    }
-
-    /* PRESENTES */
-
-    .gift-box{
-
-      margin-top:40px;
-
-      background:white;
-
-      border-radius:35px;
-
-      padding:40px 25px;
-
-      box-shadow:
-      0 10px 35px rgba(255,105,180,.1);
-    }
-
-    .gift-box h3{
-
-      text-align:center;
-
-      color:#ff4f97;
-
-      font-size:2rem;
-
-      margin-bottom:25px;
-    }
-
-    .gift-items{
-
-      display:flex;
-
-      gap:20px;
+      align-items:center;
 
       justify-content:center;
 
-      flex-wrap:wrap;
+      gap:10px;
+
+      background:var(--primary);
+
+      color:white;
+
+      padding:16px 24px;
+
+      border-radius:18px;
+
+      font-weight:600;
+
+      transition:var(--transition);
+
+      box-shadow:var(--shadow);
+
     }
 
-    .gift-item{
+    .hero-btn:hover{
 
-      background:#fff3f8;
+      transform:translateY(-4px);
 
-      padding:22px;
+      box-shadow:var(--shadow-hover);
 
-      border-radius:25px;
-
-      min-width:220px;
-
-      border:2px solid transparent;
-
-      transition:.3s;
     }
 
-    .gift-item:hover{
+    /* ======================================
+       GIFT CARDS
+    ====================================== */
 
-      transform:translateY(-8px);
+    .gift-grid{
 
-      border-color:#ffc1d8;
+      display:grid;
+
+      grid-template-columns:
+      repeat(auto-fit,minmax(260px,1fr));
+
+      gap:24px;
+
     }
 
-    .gift-item span{
+    .gift-card{
 
-      display:block;
+      background:white;
 
-      font-size:3rem;
-
-      margin-bottom:12px;
-    }
-
-    .gift-item h4{
-
-      color:#ff4f97;
-
-      margin-bottom:10px;
-    }
-
-    /* CARROSSEL */
-
-    .carousel{
-
-      position:relative;
-
-      max-width:1000px;
-
-      margin:40px auto 0;
+      border-radius:var(--radius-lg);
 
       overflow:hidden;
 
-      border-radius:35px;
+      box-shadow:var(--shadow);
 
-      box-shadow:
-      0 15px 45px rgba(255,105,180,.15);
+      transition:var(--transition);
+
+    }
+
+    .gift-card:hover{
+
+      transform:translateY(-8px);
+
+      box-shadow:var(--shadow-hover);
+
+    }
+
+    .gift-image{
+
+      height:220px;
+
+      object-fit:cover;
+
+    }
+
+    .gift-content{
+
+      padding:24px;
+
+    }
+
+    .gift-badge{
+
+      display:inline-block;
+
+      background:#ffe4ef;
+
+      color:var(--primary);
+
+      padding:8px 14px;
+
+      border-radius:999px;
+
+      margin-bottom:14px;
+
+      font-size:.85rem;
+
+      font-weight:600;
+
+    }
+
+    .gift-content h3{
+
+      font-family:var(--title-font);
+
+      color:var(--primary);
+
+      margin-bottom:12px;
+
+      font-size:1.5rem;
+
+    }
+
+    .gift-content p{
+
+      line-height:1.8;
+
+      color:var(--text-light);
+
+    }
+
+    /* ======================================
+       CAROUSEL
+    ====================================== */
+
+    .carousel-wrapper{
+      margin-top:40px;
+      position:relative;
+    }
+
+    .carousel{
+
+      overflow:hidden;
+
+      border-radius:var(--radius-xl);
+
+      box-shadow:var(--shadow);
+
     }
 
     .slides{
@@ -419,6 +567,7 @@
       display:flex;
 
       transition:transform .5s ease;
+
     }
 
     .slide{
@@ -426,6 +575,7 @@
       min-width:100%;
 
       position:relative;
+
     }
 
     .slide img{
@@ -437,43 +587,56 @@
       object-fit:cover;
 
       object-position:center top;
+
+      image-rendering:auto;
+
+      backface-visibility:hidden;
+
+      transform:translateZ(0);
+
     }
 
-    .overlay{
+    .slide-overlay{
 
       position:absolute;
 
       inset:0;
 
-      background:linear-gradient(
+      background:
+      linear-gradient(
         to top,
-        rgba(0,0,0,.35),
+        rgba(0,0,0,.45),
         transparent
       );
+
     }
 
-    .caption{
+    .slide-caption{
 
       position:absolute;
 
-      left:25px;
+      left:30px;
 
-      bottom:25px;
+      bottom:30px;
 
       color:white;
 
       z-index:2;
+
     }
 
-    .caption h2{
+    .slide-caption h2{
+
+      font-family:var(--title-font);
 
       font-size:2rem;
 
       text-shadow:
       2px 2px 10px rgba(0,0,0,.35);
+
     }
 
-    /* BOTÕES */
+    /* CONTROLES */
 
     .controls{
 
@@ -489,71 +652,202 @@
 
       transform:translateY(-50%);
 
-      padding:0 15px;
+      padding:0 18px;
 
       z-index:5;
+
     }
 
     .controls button{
 
-      width:48px;
-      height:48px;
+      width:50px;
+      height:50px;
 
       border:none;
 
       border-radius:50%;
 
-      background:rgba(255,255,255,.75);
+      background:rgba(255,255,255,.8);
 
-      color:#ff4f97;
+      color:var(--primary);
 
       font-size:1.3rem;
 
       cursor:pointer;
 
-      transition:.3s;
+      transition:var(--transition);
 
-      backdrop-filter:blur(4px);
+      backdrop-filter:blur(8px);
+
+      box-shadow:var(--shadow);
+
     }
 
     .controls button:hover{
 
+      transform:scale(1.08);
+
       background:white;
 
-      transform:scale(1.08);
     }
 
-    /* FOOTER */
+    /* DOTS */
+
+    .dots{
+
+      display:flex;
+
+      justify-content:center;
+
+      gap:10px;
+
+      margin-top:22px;
+
+    }
+
+    .dot{
+
+      width:12px;
+      height:12px;
+
+      border-radius:50%;
+
+      background:#ffc5d9;
+
+      cursor:pointer;
+
+      transition:var(--transition);
+
+    }
+
+    .dot.active{
+
+      width:34px;
+
+      border-radius:999px;
+
+      background:var(--primary);
+
+    }
+
+    /* ======================================
+       LOCALIZAÇÃO
+    ====================================== */
+
+    .location-card{
+
+      background:white;
+
+      border-radius:var(--radius-xl);
+
+      overflow:hidden;
+
+      box-shadow:var(--shadow);
+
+    }
+
+    .location-image{
+
+      height:300px;
+
+      object-fit:cover;
+
+    }
+
+    .location-content{
+
+      padding:35px;
+
+    }
+
+    .location-tag{
+
+      display:inline-block;
+
+      background:#ffe4ef;
+
+      color:var(--primary);
+
+      padding:8px 14px;
+
+      border-radius:999px;
+
+      margin-bottom:15px;
+
+      font-size:.85rem;
+
+      font-weight:600;
+
+    }
+
+    .location-box{
+
+      margin-top:25px;
+
+      background:#fff0f5;
+
+      padding:22px;
+
+      border-radius:22px;
+
+      line-height:2;
+
+    }
+
+    /* ======================================
+       FOOTER
+    ====================================== */
 
     footer{
 
-      background:#ffc7da;
+      margin-top:80px;
 
-      color:#8a5c6d;
+      background:
+      linear-gradient(
+        135deg,
+        #ffc9dd,
+        #ffdfe9
+      );
 
       text-align:center;
 
-      padding:35px 20px;
+      padding:60px 20px;
 
-      margin-top:60px;
+      color:white;
+
     }
 
-    footer h3{
+    footer h2{
 
-      font-size:1.6rem;
+      font-family:var(--title-font);
 
-      margin-bottom:10px;
+      font-size:2.4rem;
+
+      margin-bottom:15px;
+
     }
 
-    /* MOBILE */
+    footer p{
+
+      max-width:700px;
+
+      margin:auto;
+
+      line-height:1.9;
+
+      opacity:.95;
+
+    }
+
+    /* ======================================
+       MOBILE
+    ====================================== */
 
     @media(max-width:768px){
 
       section{
-        padding:50px 0;
+        padding:60px 18px;
       }
-
-      /* BANNER MOBILE */
 
       .hero{
 
@@ -561,14 +855,13 @@
 
         display:block;
 
-        padding:0 18px 40px;
+        padding:0 18px 50px;
+
       }
 
       .hero::before{
 
-        top:0;
-
-        height:56vh;
+        height:58vh;
 
         inset:auto 0 auto 0;
 
@@ -579,70 +872,62 @@
         ),
         url('banner.png') center top/contain no-repeat;
 
-        background-color:#ffe3ed;
+        background-color:#ffe4ef;
 
-        border-bottom-left-radius:35px;
-        border-bottom-right-radius:35px;
+        border-bottom-left-radius:36px;
+        border-bottom-right-radius:36px;
+
       }
-
-      /* CARD DESCENDO */
 
       .hero-content{
 
         margin-top:42vh;
 
-        background:rgba(255,255,255,.92);
+        padding:34px 24px;
+
+        background:rgba(255,255,255,.93);
 
         backdrop-filter:none;
 
-        border-radius:30px;
-
-        padding:30px 22px;
-
-        box-shadow:
-        0 10px 35px rgba(255,105,180,.12);
       }
 
       .hero h1{
-
-        font-size:2.5rem;
+        font-size:2.6rem;
       }
 
-      .hero p{
+      .slide-caption h2{
+        font-size:1.5rem;
+      }
 
-        font-size:1rem;
+      .location-image{
+        height:220px;
+      }
+
+    }
+
+    @media(max-width:480px){
+
+      .hero-content{
+        margin-top:38vh;
+      }
+
+      .hero h1{
+        font-size:2.2rem;
       }
 
       .hero-card{
-
-        min-width:110px;
-
-        padding:12px;
+        width:100%;
       }
 
-      .section-title{
+      .slide-caption{
 
-        font-size:2rem;
+        left:22px;
+        bottom:22px;
+
       }
 
-      .gift-box{
-
-        padding:30px 20px;
-      }
-
-      .gift-item{
-
-        min-width:100%;
-      }
-
-      .slide img{
-
-        aspect-ratio:4/5;
-      }
-
-      .caption h2{
-
-        font-size:1.4rem;
+      .slide-caption h2{
+        font-size:1.2rem;
       }
 
       .controls button{
@@ -651,30 +936,7 @@
         height:42px;
 
         font-size:1.1rem;
-      }
 
-      .floating-icons span{
-
-        font-size:18px;
-      }
-
-    }
-
-    @media(max-width:480px){
-
-      .hero-content{
-
-        margin-top:38vh;
-      }
-
-      .hero h1{
-
-        font-size:2rem;
-      }
-
-      .caption h2{
-
-        font-size:1.2rem;
       }
 
     }
@@ -689,8 +951,6 @@
 
   <section class="hero">
 
-    <!-- ICONES -->
-
     <div class="floating-icons">
 
       <span>💖</span>
@@ -702,9 +962,11 @@
 
     </div>
 
-    <!-- CARD -->
-
     <div class="hero-content">
+
+      <div class="hero-tag">
+        ✨ Um momento muito especial ✨
+      </div>
 
       <h1>
         Chá de Bebê 🎀
@@ -718,16 +980,29 @@
       <div class="hero-info">
 
         <div class="hero-card">
+
           <strong>09/08</strong>
+
           Data
+
         </div>
 
         <div class="hero-card">
+
           <strong>14:00</strong>
+
           Horário
+
         </div>
 
       </div>
+
+      <a
+        href="#localizacao"
+        class="hero-btn"
+      >
+        📍 Ver localização
+      </a>
 
     </div>
 
@@ -735,58 +1010,128 @@
 
   <!-- SOBRE -->
 
-  <section class="about">
+  <section>
 
     <div class="container">
 
       <h2 class="section-title">
-        Um momento muito especial ✨
+        Nossa pequena está chegando 💕
       </h2>
 
-      <p>
-        Criamos esse cantinho com muito amor para compartilhar
-        com vocês a alegria da chegada da nossa bebê 🎀
-        Estamos vivendo uma fase linda e será maravilhoso
-        celebrar esse momento ao lado das pessoas que amamos 💕
+      <p class="section-subtitle">
+        Criamos esse cantinho com muito amor
+        para compartilhar com vocês a alegria
+        da chegada da nossa bebê 🎀
+        Será maravilhoso celebrar esse momento
+        ao lado das pessoas que amamos ✨
       </p>
 
-      <!-- PRESENTES -->
+    </div>
 
-      <div class="gift-box">
+  </section>
 
-        <h3>
-          🎁 Sugestão de Presente
-        </h3>
+  <!-- PRESENTES -->
 
-        <div class="gift-items">
+  <section>
 
-          <div class="gift-item">
+    <div class="container">
 
-            <span>🍼</span>
+      <h2 class="section-title">
+        Sugestões de Presentes 🎁
+      </h2>
 
-            <h4>Fralda M</h4>
+      <p class="section-subtitle">
+        Qualquer presente será recebido
+        com muito amor e carinho 💖
+      </p>
 
-            <p>Qualquer marca 💖</p>
+      <div class="gift-grid">
+
+        <!-- ITEM 1 -->
+
+        <div class="gift-card">
+
+          <img
+            class="gift-image"
+            src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?q=80&w=1200&auto=format&fit=crop"
+            alt="Fralda M"
+            loading="lazy"
+            decoding="async"
+          >
+
+          <div class="gift-content">
+
+            <div class="gift-badge">
+              🍼 Fraldas
+            </div>
+
+            <h3>
+              Fralda M
+            </h3>
+
+            <p>
+              Qualquer marca 💖
+            </p>
 
           </div>
 
-          <div class="gift-item">
+        </div>
 
-            <span>🎀</span>
+        <!-- ITEM 2 -->
 
-            <h4>Fralda G</h4>
+        <div class="gift-card">
 
-            <p>Vai ajudar muito 🥰</p>
+          <img
+            class="gift-image"
+            src="https://images.unsplash.com/photo-1519340241574-2cec6aef0c01?q=80&w=1200&auto=format&fit=crop"
+            alt="Fralda G"
+            loading="lazy"
+            decoding="async"
+          >
+
+          <div class="gift-content">
+
+            <div class="gift-badge">
+              🎀 Fraldas
+            </div>
+
+            <h3>
+              Fralda G
+            </h3>
+
+            <p>
+              Vai ajudar muito 🥰
+            </p>
 
           </div>
 
-          <div class="gift-item">
+        </div>
 
-            <span>🧷</span>
+        <!-- ITEM 3 -->
 
-            <h4>Lenço Umedecido</h4>
+        <div class="gift-card">
 
-            <p>Com muito carinho 💕</p>
+          <img
+            class="gift-image"
+            src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?q=80&w=1200&auto=format&fit=crop"
+            alt="Lenço umedecido"
+            loading="lazy"
+            decoding="async"
+          >
+
+          <div class="gift-content">
+
+            <div class="gift-badge">
+              🧷 Higiene
+            </div>
+
+            <h3>
+              Lenço Umedecido
+            </h3>
+
+            <p>
+              Com muito carinho 💕
+            </p>
 
           </div>
 
@@ -808,59 +1153,166 @@
         Nossa Espera 💖
       </h2>
 
-      <div class="carousel">
+      <p class="section-subtitle">
+        Cada momento está sendo vivido
+        com muito amor e felicidade ✨
+      </p>
 
-        <div class="slides" id="slides">
+      <div class="carousel-wrapper">
 
-          <div class="slide">
+        <div class="carousel">
 
-            <img src="foto.jpeg">
+          <div class="slides" id="slides">
 
-            <div class="overlay"></div>
+            <!-- FOTO 1 -->
 
-            <div class="caption">
-              <h2>Nosso amor está crescendo ✨</h2>
+            <div class="slide">
+
+              <img
+                src="foto.jpeg"
+                alt="Foto casal 1"
+                loading="lazy"
+                decoding="async"
+              >
+
+              <div class="slide-overlay"></div>
+
+              <div class="slide-caption">
+
+                <h2>
+                  Nosso amor está crescendo ✨
+                </h2>
+
+              </div>
+
+            </div>
+
+            <!-- FOTO 2 -->
+
+            <div class="slide">
+
+              <img
+                src="foto1.jpeg"
+                alt="Foto casal 2"
+                loading="lazy"
+                decoding="async"
+              >
+
+              <div class="slide-overlay"></div>
+
+              <div class="slide-caption">
+
+                <h2>
+                  Esperando nossa princesa 🎀
+                </h2>
+
+              </div>
+
+            </div>
+
+            <!-- FOTO 3 -->
+
+            <div class="slide">
+
+              <img
+                src="foto2.jpeg"
+                alt="Foto casal 3"
+                loading="lazy"
+                decoding="async"
+              >
+
+              <div class="slide-overlay"></div>
+
+              <div class="slide-caption">
+
+                <h2>
+                  Momentos inesquecíveis 💕
+                </h2>
+
+              </div>
+
             </div>
 
           </div>
 
-          <div class="slide">
+          <!-- CONTROLES -->
 
-            <img src="foto1.jpeg">
+          <div class="controls">
 
-            <div class="overlay"></div>
+            <button id="prevBtn">
+              ❮
+            </button>
 
-            <div class="caption">
-              <h2>Esperando nossa princesa 🎀</h2>
-            </div>
-
-          </div>
-
-          <div class="slide">
-
-            <img src="foto2.jpeg">
-
-            <div class="overlay"></div>
-
-            <div class="caption">
-              <h2>Momentos inesquecíveis 💕</h2>
-            </div>
+            <button id="nextBtn">
+              ❯
+            </button>
 
           </div>
 
         </div>
 
-        <!-- CONTROLES -->
+        <!-- DOTS -->
 
-        <div class="controls">
+        <div class="dots" id="dots"></div>
 
-          <button onclick="prevSlide()">
-            ❮
-          </button>
+      </div>
 
-          <button onclick="nextSlide()">
-            ❯
-          </button>
+    </div>
+
+  </section>
+
+  <!-- LOCALIZAÇÃO -->
+
+  <section id="localizacao">
+
+    <div class="container">
+
+      <div class="location-card">
+
+        <img
+          class="location-image"
+          src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=1200&auto=format&fit=crop"
+          alt="Localização"
+          loading="lazy"
+          decoding="async"
+        >
+
+        <div class="location-content">
+
+          <div class="location-tag">
+            📍 Localização
+          </div>
+
+          <h2
+            class="section-title"
+            style="margin-bottom:10px;"
+          >
+            Esperamos você 💖
+          </h2>
+
+          <p
+            class="section-subtitle"
+            style="margin-bottom:0;"
+          >
+            Será um momento inesquecível
+            cheio de carinho e felicidade ✨
+          </p>
+
+          <div class="location-box">
+
+            <strong>
+              Local ainda a informar 💖
+            </strong>
+
+            <br><br>
+
+            🕒 14:00
+
+            <br>
+
+            📅 09/08
+
+          </div>
 
         </div>
 
@@ -874,12 +1326,13 @@
 
   <footer>
 
-    <h3>
+    <h2>
       Chá de Bebê 🎀
-    </h3>
+    </h2>
 
     <p>
-      Feito com muito amor para nossa princesinha 💖
+      Feito com muito amor
+      para nossa princesinha 💖
     </p>
 
   </footer>
@@ -888,18 +1341,70 @@
 
   <script>
 
-    let currentSlide = 0;
-
     const slides =
       document.getElementById('slides');
 
-    const totalSlides =
-      document.querySelectorAll('.slide').length;
+    const slide =
+      document.querySelectorAll('.slide');
+
+    const dotsContainer =
+      document.getElementById('dots');
+
+    const nextBtn =
+      document.getElementById('nextBtn');
+
+    const prevBtn =
+      document.getElementById('prevBtn');
+
+    let currentSlide = 0;
+
+    let autoPlay;
+
+    // CRIAR DOTS
+
+    slide.forEach((_, index) => {
+
+      const dot =
+        document.createElement('div');
+
+      dot.classList.add('dot');
+
+      if(index === 0){
+        dot.classList.add('active');
+      }
+
+      dot.addEventListener('click', () => {
+        goToSlide(index);
+      });
+
+      dotsContainer.appendChild(dot);
+
+    });
+
+    const dots =
+      document.querySelectorAll('.dot');
+
+    // ATUALIZAR
 
     function updateSlide(){
 
       slides.style.transform =
       `translateX(-${currentSlide * 100}%)`;
+
+      dots.forEach(dot =>
+        dot.classList.remove('active')
+      );
+
+      dots[currentSlide]
+        .classList.add('active');
+
+    }
+
+    function goToSlide(index){
+
+      currentSlide = index;
+
+      updateSlide();
 
     }
 
@@ -907,7 +1412,7 @@
 
       currentSlide++;
 
-      if(currentSlide >= totalSlides){
+      if(currentSlide >= slide.length){
         currentSlide = 0;
       }
 
@@ -920,18 +1425,93 @@
       currentSlide--;
 
       if(currentSlide < 0){
-        currentSlide = totalSlides - 1;
+        currentSlide = slide.length - 1;
       }
 
       updateSlide();
 
     }
 
-    setInterval(() => {
+    nextBtn.addEventListener(
+      'click',
+      nextSlide
+    );
 
-      nextSlide();
+    prevBtn.addEventListener(
+      'click',
+      prevSlide
+    );
 
-    }, 5000);
+    // AUTOPLAY
+
+    function startAutoPlay(){
+
+      autoPlay =
+      setInterval(nextSlide, 5000);
+
+    }
+
+    function stopAutoPlay(){
+
+      clearInterval(autoPlay);
+
+    }
+
+    startAutoPlay();
+
+    // PAUSAR HOVER
+
+    const carousel =
+      document.querySelector('.carousel');
+
+    carousel.addEventListener(
+      'mouseenter',
+      stopAutoPlay
+    );
+
+    carousel.addEventListener(
+      'mouseleave',
+      startAutoPlay
+    );
+
+    // TOUCH MOBILE
+
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    carousel.addEventListener(
+      'touchstart',
+      e => {
+
+        touchStartX =
+        e.changedTouches[0].screenX;
+
+      }
+    );
+
+    carousel.addEventListener(
+      'touchend',
+      e => {
+
+        touchEndX =
+        e.changedTouches[0].screenX;
+
+        handleGesture();
+
+      }
+    );
+
+    function handleGesture(){
+
+      if(touchEndX < touchStartX - 50){
+        nextSlide();
+      }
+
+      if(touchEndX > touchStartX + 50){
+        prevSlide();
+      }
+
+    }
 
   </script>
 
